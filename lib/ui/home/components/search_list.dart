@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:pochi_pochi2026_handson/model/search/model.dart';
 
 class HomeScreenSearchList extends StatelessWidget {
-  const HomeScreenSearchList({super.key});
+  final List<Package> packages;
+  const HomeScreenSearchList({super.key, required this.packages});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 10,
+      itemCount: packages.length,
       itemBuilder: (context, index) {
-        return Column(children: [Gap(4), Text("test"), Gap(8), Divider()]);
+        return Column(
+          children: [
+            Gap(4),
+            Text(packages[index].package, style: TextStyle(fontSize: 20)),
+            Gap(8),
+            Divider(),
+          ],
+        );
       },
     );
   }

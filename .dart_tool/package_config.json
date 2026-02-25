@@ -171,7 +171,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/eitanakgaichi/flutter/packages/flutter",
+      "rootUri": "file:///Users/eitanakgaichi/fvm/versions/3.41.1/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -195,7 +195,7 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/eitanakgaichi/flutter/packages/flutter_test",
+      "rootUri": "file:///Users/eitanakgaichi/fvm/versions/3.41.1/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -423,7 +423,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/eitanakgaichi/flutter/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/eitanakgaichi/fvm/versions/3.41.1/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.9"
     },
@@ -574,7 +574,7 @@
   ],
   "generator": "pub",
   "generatorVersion": "3.11.0",
-  "flutterRoot": "file:///Users/eitanakgaichi/flutter",
+  "flutterRoot": "file:///Users/eitanakgaichi/fvm/versions/3.41.1",
   "flutterVersion": "3.41.1",
   "pubCache": "file:///Users/eitanakgaichi/.pub-cache"
 }
