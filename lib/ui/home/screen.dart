@@ -26,10 +26,12 @@ class HomeScreen extends HookConsumerWidget {
           Row(
             children: [
               Expanded(
+                flex: 7,
                 child: HomeScreenSearchField(textController: textController),
               ),
               Gap(4),
               Expanded(
+                flex: 3,
                 child: ElevatedButton(
                   onPressed: () {
                     ref

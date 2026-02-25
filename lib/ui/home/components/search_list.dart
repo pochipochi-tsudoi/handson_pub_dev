@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pochi_pochi2026_handson/model/search/model.dart';
 
 class HomeScreenSearchList extends StatelessWidget {
@@ -11,13 +12,18 @@ class HomeScreenSearchList extends StatelessWidget {
     return ListView.builder(
       itemCount: packages.length,
       itemBuilder: (context, index) {
-        return Column(
-          children: [
-            Gap(4),
-            Text(packages[index].package, style: TextStyle(fontSize: 20)),
-            Gap(8),
-            Divider(),
-          ],
+        return InkWell(
+          onTap: () {
+            context.push('/details', extra: packages[index].package);
+          },
+          child: Column(
+            children: [
+              Gap(4),
+              Text(packages[index].package, style: TextStyle(fontSize: 20)),
+              Gap(8),
+              Divider(),
+            ],
+          ),
         );
       },
     );
