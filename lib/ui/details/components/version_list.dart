@@ -15,14 +15,20 @@ class DetailsVersionList extends StatelessWidget {
         Text('Versions (${versions.length})'),
         const SizedBox(height: 4),
         ...recent.map(
-          (v) => ListTile(
-            dense: true,
-            contentPadding: EdgeInsets.zero,
-            title: Text(v.version ?? ''),
-            subtitle: Text(
-              v.published != null ? v.published!.substring(0, 10) : '',
+          (v) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Row(
+              children: [
+                Text(v.version ?? ''),
+                const SizedBox(width: 16),
+                Text(
+                  v.published != null ? v.published!.substring(0, 10) : '',
+                  style: const TextStyle(color: Colors.grey),
+                ),
+                const Spacer(),
+                if (v.retracted) const Text('retracted'),
+              ],
             ),
-            trailing: v.retracted ? const Text('retracted') : null,
           ),
         ),
       ],
