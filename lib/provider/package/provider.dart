@@ -7,9 +7,7 @@ part 'provider.g.dart';
 @riverpod
 class PackageNotifier extends _$PackageNotifier {
   @override
-  void build() {
-    return;
-  }
+  void build() {}
 
   Future<PackageDetailResponse> fetch(String packageName) async {
     final response = await ref

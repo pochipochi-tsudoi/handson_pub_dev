@@ -7,9 +7,7 @@ part 'provider.g.dart';
 @riverpod
 class SearchNotifier extends _$SearchNotifier {
   @override
-  void build() {
-    return;
-  }
+  void build() {}
 
   Future<SearchResponse> search(String query) async {
     final response = await ref.read(apiClientProvider).get('/search?q=$query');
