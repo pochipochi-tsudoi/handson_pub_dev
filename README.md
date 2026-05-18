@@ -149,6 +149,11 @@ export 'handson/app.dart';
 - `lib/app.dart`
 - `lib/handson/app.dart`
 
+ファイルの役割:
+
+- `lib/app.dart`: 完成系アプリとハンズオン用アプリを export で切り替える入口です。
+- `lib/handson/app.dart`: ハンズオン用アプリの最初の Widget を定義します。この時点では Hello World を表示するだけの最小構成です。
+
 実行します。
 
 ```sh
@@ -164,6 +169,17 @@ flutter run
 - `lib/handson/ui/home/screen.dart`
 - `lib/handson/ui/home/components/search_field.dart`
 
+ファイルの役割:
+
+- `lib/handson/ui/home/screen.dart`: 検索画面全体を組み立てるファイルです。AppBar、検索欄、検索ボタン、検索結果一覧を配置します。
+- `lib/handson/ui/home/components/search_field.dart`: 検索キーワードを入力する TextField だけを担当する画面部品です。
+
+このステップで見るポイント:
+
+- 画面全体を作る `screen.dart` と、小さな UI 部品を作る `components/` を分けます。
+- UI 部品を分けることで、画面全体のコードが長くなりすぎるのを防ぎます。
+- 入力欄そのものの見た目や設定は `search_field.dart` に閉じ込めます。
+
 この時点では後続ステップのファイルも必要になるため、次のステップへ進みます。
 
 ## 2.2. Router の用意
@@ -174,6 +190,17 @@ flutter run
 
 - `lib/handson/app.dart`
 - `lib/handson/router/router.dart`
+
+ファイルの役割:
+
+- `lib/handson/app.dart`: `MaterialApp` を `MaterialApp.router` に変更し、アプリ全体で Router を使えるようにします。
+- `lib/handson/router/router.dart`: アプリ内の画面遷移ルールをまとめます。どの URL パスでどの画面を表示するかを定義します。
+
+このステップで見るポイント:
+
+- 画面遷移を各画面に直接書き散らさず、`router/` にまとめます。
+- `go_router` を使うことで、`/` や `/details` のようなパスで画面を管理できます。
+- 詳細画面へ渡す `packageName` は、検索結果タップ時に `extra` として渡します。
 
 `lib/handson/app.dart` は Hello World 用の `MyApp` をコメントアウトし、`STEP 2.2` の `MyApp` を使います。
 
@@ -188,6 +215,19 @@ flutter run
 - `lib/handson/ui/details/components/package_header.dart`
 - `lib/handson/ui/details/components/version_list.dart`
 
+ファイルの役割:
+
+- `lib/handson/ui/home/components/search_list.dart`: 検索結果の一覧表示を担当します。パッケージ名を一覧にし、タップ時に詳細画面へ遷移します。
+- `lib/handson/ui/details/screen.dart`: 詳細画面全体を組み立てます。読み込み中、エラー、データ表示の状態ごとに UI を切り替えます。
+- `lib/handson/ui/details/components/package_header.dart`: パッケージ詳細の上部情報を表示します。名前、バージョン、説明、リポジトリ、ホームページ、トピックを扱います。
+- `lib/handson/ui/details/components/version_list.dart`: パッケージのバージョン一覧を表示します。
+
+このステップで見るポイント:
+
+- 一覧画面と詳細画面を分けることで、画面ごとの責任がはっきりします。
+- 詳細画面の中でも Header と VersionList を分け、1 つの Widget が大きくなりすぎないようにします。
+- `screen.dart` は画面全体の構成、`components/` は再利用しやすい小さな表示部品を担当します。
+
 ## 3. model 作成
 
 `STEP 3` のコメントアウトを解除します。
@@ -196,6 +236,17 @@ flutter run
 
 - `lib/handson/model/search/model.dart`
 - `lib/handson/model/package/model.dart`
+
+ファイルの役割:
+
+- `lib/handson/model/search/model.dart`: pub.dev の検索 API レスポンスを Dart の型として定義します。検索結果一覧で使う `SearchResponse` と `Package` を扱います。
+- `lib/handson/model/package/model.dart`: pub.dev のパッケージ詳細 API レスポンスを Dart の型として定義します。詳細画面で使うパッケージ情報、バージョン情報、pubspec 情報を扱います。
+
+このステップで見るポイント:
+
+- API から返る JSON をそのまま UI で扱わず、Model に変換します。
+- Model を作ることで、UI や ViewModel は型のあるデータとして安全に扱えます。
+- Freezed と json_serializable を使うため、コメントアウト解除後に生成ファイルを作る必要があります。
 
 build_runner を実行します。
 
@@ -213,6 +264,18 @@ dart run build_runner build --delete-conflicting-outputs
 - `lib/handson/provider/search/provider.dart`
 - `lib/handson/provider/package/provider.dart`
 
+ファイルの役割:
+
+- `lib/handson/provider/dio/provider.dart`: pub.dev API へアクセスするための Dio クライアントを提供します。baseUrl やタイムアウトなど、通信の共通設定を持ちます。
+- `lib/handson/provider/search/provider.dart`: 検索 API を呼び出し、`SearchResponse` に変換して返します。
+- `lib/handson/provider/package/provider.dart`: パッケージ詳細 API を呼び出し、`PackageDetailResponse` に変換して返します。
+
+このステップで見るポイント:
+
+- UI から直接 Dio を呼ばず、Provider 経由で API 処理を呼び出します。
+- API ごとに Provider を分けることで、検索の処理と詳細取得の処理を別々に追いやすくします。
+- 通信設定は `dio/provider.dart` に集約し、各 API Provider は必要な endpoint と Model 変換に集中します。
+
 build_runner を実行します。
 
 ```sh
@@ -227,6 +290,18 @@ dart run build_runner build --delete-conflicting-outputs
 
 - `lib/handson/ui/home/view_model.dart`
 - `lib/handson/ui/details/view_model.dart`
+
+ファイルの役割:
+
+- `lib/handson/ui/home/view_model.dart`: 検索画面の State と操作を持ちます。検索中かどうか、検索結果の一覧、検索ボタンが押されたときの処理を管理します。
+- `lib/handson/ui/details/view_model.dart`: 詳細画面の State と操作を持ちます。画面に渡されたパッケージ名をもとに詳細 API を呼び出し、画面が表示するデータを用意します。
+
+このステップで見るポイント:
+
+- UI は `ref.watch` で ViewModel の State を見ます。
+- ボタン操作などのイベントは ViewModel のメソッドに渡します。
+- ViewModel が Provider を呼び出すことで、UI は API 通信の詳細を知らなくてよくなります。
+- Flutter と Riverpod では、画面ごとの State と操作を ViewModel として Provider 化すると、UI と State の分離が分かりやすくなります。
 
 build_runner を実行します。
 
@@ -243,6 +318,14 @@ flutter run
 ```
 
 検索画面で pub.dev のパッケージを検索し、検索結果をタップして詳細画面へ遷移できれば完了です。
+
+確認する流れ:
+
+- `lib/app.dart` が `handson/app.dart` を export していることを確認します。
+- 検索画面でキーワードを入力します。
+- Search ボタンを押して検索結果が表示されることを確認します。
+- 検索結果をタップして詳細画面へ遷移することを確認します。
+- 詳細画面でパッケージ概要とバージョン一覧が表示されることを確認します。
 
 ## 7. 発展課題
 
