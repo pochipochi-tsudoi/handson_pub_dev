@@ -1,4 +1,4 @@
-package com.pochi.pochi_pochi2026_handson
+package com.example.handson_pub_dev
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pochi_pochi2026_handson/complete/model/package/model.dart';
-import 'package:pochi_pochi2026_handson/complete/provider/package/provider.dart';
+import 'package:handson_pub_dev/complete/model/package/model.dart';
+import 'package:handson_pub_dev/complete/provider/package/provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'view_model.freezed.dart';

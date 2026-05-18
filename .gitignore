@@ -14,6 +14,8 @@ migrate_working_dir/
 
 # IntelliJ related
 *.iml
+!handson_pub_dev.iml
+!android/handson_pub_dev_android.iml
 *.ipr
 *.iws
 .idea/

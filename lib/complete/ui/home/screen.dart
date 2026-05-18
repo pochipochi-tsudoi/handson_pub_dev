@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pochi_pochi2026_handson/complete/ui/home/components/search_field.dart';
-import 'package:pochi_pochi2026_handson/complete/ui/home/components/search_list.dart';
-import 'package:pochi_pochi2026_handson/complete/ui/home/view_model.dart';
+import 'package:handson_pub_dev/complete/ui/home/components/search_field.dart';
+import 'package:handson_pub_dev/complete/ui/home/components/search_list.dart';
+import 'package:handson_pub_dev/complete/ui/home/view_model.dart';
 
 class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});

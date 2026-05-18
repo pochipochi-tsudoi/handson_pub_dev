@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pochi_pochi2026_handson/complete/router/router.dart';
+import 'package:handson_pub_dev/complete/router/router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: '2026ハンズオン',
+      title: 'handson_pub_dev',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

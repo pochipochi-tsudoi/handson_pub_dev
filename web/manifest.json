@@ -1,6 +1,6 @@
 {
-    "name": "pochi_pochi2026_handson",
-    "short_name": "pochi_pochi2026_handson",
+    "name": "handson_pub_dev",
+    "short_name": "handson_pub_dev",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

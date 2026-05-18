@@ -2,7 +2,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:gap/gap.dart';
 // import 'package:go_router/go_router.dart';
-// import 'package:pochi_pochi2026_handson/handson/model/search/model.dart';
+// import 'package:handson_pub_dev/handson/model/search/model.dart';
 //
 // class HomeScreenSearchList extends StatelessWidget {
 //   final List<Package> packages;

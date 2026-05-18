@@ -1,4 +1,4 @@
-# pochi_pochi2026_handson
+# handson_pub_dev
 
 pub.dev のパッケージ検索アプリを、コメントアウト解除で完成させる Flutter ハンズオンです。
 

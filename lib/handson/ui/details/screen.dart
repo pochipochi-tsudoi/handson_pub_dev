@@ -1,9 +1,9 @@
 // STEP 2.3
 // import 'package:flutter/material.dart';
 // import 'package:hooks_riverpod/hooks_riverpod.dart';
-// import 'package:pochi_pochi2026_handson/handson/ui/details/components/package_header.dart';
-// import 'package:pochi_pochi2026_handson/handson/ui/details/components/version_list.dart';
-// import 'package:pochi_pochi2026_handson/handson/ui/details/view_model.dart';
+// import 'package:handson_pub_dev/handson/ui/details/components/package_header.dart';
+// import 'package:handson_pub_dev/handson/ui/details/components/version_list.dart';
+// import 'package:handson_pub_dev/handson/ui/details/view_model.dart';
 //
 // class DetailsScreen extends HookConsumerWidget {
 //   final String packageName;

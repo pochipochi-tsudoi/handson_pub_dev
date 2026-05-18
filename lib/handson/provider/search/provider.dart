@@ -1,6 +1,6 @@
 // STEP 4
-// import 'package:pochi_pochi2026_handson/handson/model/search/model.dart';
-// import 'package:pochi_pochi2026_handson/handson/provider/dio/provider.dart';
+// import 'package:handson_pub_dev/handson/model/search/model.dart';
+// import 'package:handson_pub_dev/handson/provider/dio/provider.dart';
 // import 'package:riverpod_annotation/riverpod_annotation.dart';
 //
 // part 'provider.g.dart';

@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:pochi_pochi2026_handson/complete/ui/details/screen.dart';
-import 'package:pochi_pochi2026_handson/complete/ui/home/screen.dart';
+import 'package:handson_pub_dev/complete/ui/details/screen.dart';
+import 'package:handson_pub_dev/complete/ui/home/screen.dart';
 
 final router = GoRouter(
   routes: [

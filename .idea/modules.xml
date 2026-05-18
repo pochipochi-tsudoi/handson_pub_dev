@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/pochi_pochi2026_handson.iml" filepath="$PROJECT_DIR$/pochi_pochi2026_handson.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/pochi_pochi2026_handson_android.iml" filepath="$PROJECT_DIR$/android/pochi_pochi2026_handson_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handson_pub_dev.iml" filepath="$PROJECT_DIR$/handson_pub_dev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/handson_pub_dev_android.iml" filepath="$PROJECT_DIR$/android/handson_pub_dev_android.iml" />
     </modules>
   </component>
 </project>

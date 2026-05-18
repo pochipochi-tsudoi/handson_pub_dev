@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:pochi_pochi2026_handson/complete/model/package/model.dart';
+import 'package:handson_pub_dev/complete/model/package/model.dart';
 
 class DetailsPackageHeader extends StatelessWidget {
   final PackageDetailResponse detail;
