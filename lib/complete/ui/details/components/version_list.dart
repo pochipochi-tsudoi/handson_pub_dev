@@ -10,7 +10,7 @@ class DetailsVersionList extends StatelessWidget {
     final recent = versions.reversed.take(10).toList();
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: [
         Text('Versions (${versions.length})'),
         const SizedBox(height: 4),

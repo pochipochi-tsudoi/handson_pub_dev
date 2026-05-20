@@ -1,3 +1,78 @@
+# Flutter ハンズオン
+
+## Flutter とは
+
+Flutterは、Googleによって開発されたオープンソースのUIフレームワークです。単一のコードベースから、iOS、Android、Web、Windows、macOS、Linuxといった複数のプラットフォーム向けに、ネイティブコンパイルされた高品質なアプリケーションを構築できます。
+
+### Flutter と Dart の関係
+
+Flutter アプリケーションは **Dart** という言語で記述されます。
+
+- **エンジンの役割**: Flutter は UI 描画エンジン（Skia や Impeller）、ライブラリ、ツールセットを提供します。
+- **言語の役割**: Dart はそのエンジン上で動くロジックや UI の構成を記述するためのプログラミング言語です。
+
+Flutter が Dart を採用している主な理由は、以下の 2 つのコンパイル方式をサポートしている点にあります。
+1. **JIT (Just-in-Time) コンパイル**: 開発中に使用されます。これにより「Hot Reload」が可能になり、コードの変更を秒単位でシミュレータや実機に反映できます。
+2. **AOT (Ahead-of-Time) コンパイル**: リリース時に使用されます。コードを各プラットフォームのネイティブマシンコードに事前に変換するため、非常に高速な起動とスムーズなパフォーマンスを実現します。
+
+### Dart について
+
+Dart は「あらゆるプラットフォームで高速に動作するアプリ」を作るために最適化された、クライアント向けのオブジェクト指向言語です。
+
+- **習得のしやすさ**: Java、JavaScript、C# などに近い構文（C-style syntax）を持っており、他の言語経験者にとって非常に親しみやすい言語です。
+- **強力な型システム**: 健全な型システム（Sound Type System）と静的解析により、実行前のエラー検知が容易です。
+- **Null Safety**: 変数が null かどうかを厳密に扱うことで、アプリのクラッシュの主な原因となる null 参照エラーを未然に防ぎます。
+
+## Widget（ウィジェット）とは
+
+Flutter の UI 構築における核心的な概念が「**Widget（ウィジェット）**」です。
+
+### 「すべてがウィジェット」
+
+Flutter では、ボタンやテキストのような目に見える部品だけでなく、レイアウト（余白や配置）、色、テーマ、アニメーションまでもがウィジェットとして定義されます。
+
+ウィジェットは**不変（Immutable）**であり、現在の「アプリの状態」に基づいた UI の「構成情報（設計図）」を保持します。状態が変化すると、Flutter は新しいウィジェットを生成し、古いものと効率的に比較（Diffing）して、最小限のコストで画面を更新します。
+
+### ウィジェットの記述例
+
+以下は、いくつかの基本的なウィジェットを組み合わせた例です。
+
+```dart
+// 中央にアイコンとテキスト、ボタンを縦に並べる例
+Center(
+  child: Padding(
+    padding: EdgeInsets.all(16.0),
+    child: Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.flutter_dash, size: 50, color: Colors.blue),
+        Text(
+          'Hello Flutter',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        ElevatedButton(
+          onPressed: () => print('Pressed!'),
+          child: Text('Click Me'),
+        ),
+      ],
+    ),
+  ),
+)
+```
+
+- **Center / Padding**: 配置や余白を制御します。
+- **Column**: 子要素を「縦」に並べます（横は **Row**）。
+- **Icon / Text**: 画像や文字を表示します。
+- **ElevatedButton**: ユーザーがタップできるボタンを提供します。
+
+### Stateless と Stateful
+
+ウィジェットには大きく分けて 2 つの種類があります。
+- **StatelessWidget**: 状態を持たないウィジェット。外部から渡されたデータが変わらない限り、見た目は固定です。
+- **StatefulWidget**: 内部に「状態（State）」を持つウィジェット。ユーザーの操作（ボタン押下など）やデータの変化に応じて、自分自身の表示を更新できます。
+
+---
+
 # handson_pub_dev
 
 pub.dev のパッケージ検索アプリを、コメントアウト解除で完成させる Flutter ハンズオンです。
