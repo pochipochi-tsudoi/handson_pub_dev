@@ -326,7 +326,7 @@ flutter run
 build_runner を実行します。
 
 ```sh
-dart run build_runner build --delete-conflicting-outputs
+fvm flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 ## 4. Provider の作成
@@ -354,7 +354,7 @@ dart run build_runner build --delete-conflicting-outputs
 build_runner を実行します。
 
 ```sh
-dart run build_runner build --delete-conflicting-outputs
+fvm flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 ## 5. ViewModel の作成
@@ -381,7 +381,7 @@ dart run build_runner build --delete-conflicting-outputs
 build_runner を実行します。
 
 ```sh
-dart run build_runner build --delete-conflicting-outputs
+fvm flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
 ## 6. 実行の確認
